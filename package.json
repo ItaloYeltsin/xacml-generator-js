@@ -1,0 +1,26 @@
+{
+  "name": "xacml-generator",
+  "version": "0.1.0",
+  "description": "This an javascritpt library for parsing and generate OASIS/XACML. It implements the representation of each XACML element.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItaloYeltsin/xacml-generator-js.git"
+  },
+  "keywords": [
+    "xacml",
+    "oasis"
+  ],
+  "author": "ItaloYeltsin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItaloYeltsin/xacml-generator-js/issues"
+  },
+  "homepage": "https://github.com/ItaloYeltsin/xacml-generator-js#readme",
+  "dependencies": {
+    "xmlbuilder2": "^2.4.0"
+  }
+}
