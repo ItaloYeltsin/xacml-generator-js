@@ -7,15 +7,15 @@ const { create } = require('xmlbuilder2');
 
 export abstract class XACMLElement {
   public elementName: string
-  public elementRoot: object
+  public elementRoot: any
 
   constructor() {
     this.elementName = this.constructor.name
     this.elementRoot = {}
   }
 
-  public addAttribute(key, value: string) {
-    this.elementRoot[this.constructor.name][`@${key}`] = value
+  public addAttribute(key: string, value: string) {
+    this.elementRoot[String(this.constructor.name)][`@${key}`] = value
   }
 
   public addChild(childElement: XACMLElement) {

@@ -4,7 +4,8 @@
   "description": "This an javascritpt library for parsing and generate OASIS/XACML. It implements the representation of each XACML element.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register src/test/**/*.test.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,17 @@
   },
   "homepage": "https://github.com/ItaloYeltsin/xacml-generator-js#readme",
   "dependencies": {
+    "typescript": "^4.0.5",
     "xmlbuilder2": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.3",
+    "chai": "^4.2.0",
+    "i": "^0.3.6",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.0.0",
+    "typescriptnpm": "^1.0.1"
   }
 }

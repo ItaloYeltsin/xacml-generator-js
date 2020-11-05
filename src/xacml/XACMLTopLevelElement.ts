@@ -10,11 +10,12 @@ export abstract class XACMLTopLevelElement extends XACMLElement {
   constructor(description: string) {
 		super()
 
-    this.elementRoot = { [this.constructor.name]: { Description: description } }
+    this.elementRoot = { [String(this.constructor.name)]: { Description: description } }
   }
 
   public addChild(childElement: XACMLElement) {
-    if (childElement.elementName in this.elementRoot[this.constructor.name]) {
+    let name : string = String(this.constructor.name)
+    if (childElement.elementName in this.elementRoot[name]) {
       this.elementRoot[this.constructor.name][childElement.elementName] = [].concat(this.elementRoot[this.constructor.name][childElement.elementName], childElement.elementRoot)
     } else {
       this.elementRoot[this.constructor.name][childElement.elementName] = childElement.elementRoot
