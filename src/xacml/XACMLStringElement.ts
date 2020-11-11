@@ -5,8 +5,10 @@
 
 import { XACMLElement } from "./XACMLElement";
 
-export class AnyOf extends XACMLElement {
-  constructor(){
+export abstract class XACMLStringElement extends XACMLElement{
+
+  constructor(value: string) {
     super({})
+    this.elementRoot = value
   }
 }

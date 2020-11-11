@@ -5,6 +5,6 @@
 
 import { XACMLElement } from "./XACMLElement";
 
-export class PolicyDefaults extends XACMLElement {
+export class MultiRequests extends XACMLElement {
   
 }

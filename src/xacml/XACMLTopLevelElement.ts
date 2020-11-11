@@ -4,27 +4,25 @@
 // SPDX-License-Identifier: MIT
 
 const { create } = require('xmlbuilder2');
+import { Description } from "./Description";
 import { XACMLElement } from "./XACMLElement";
 
 export abstract class XACMLTopLevelElement extends XACMLElement {
-  constructor(description: string) {
-		super()
-
-    this.elementRoot = { [String(this.constructor.name)]: { Description: description } }
+  constructor(options: XACMLTopLevelElement.Options) {
+		super(options)
   }
-
-  public addChild(childElement: XACMLElement) {
-    let name : string = String(this.constructor.name)
-    if (childElement.elementName in this.elementRoot[name]) {
-      this.elementRoot[this.constructor.name][childElement.elementName] = [].concat(this.elementRoot[this.constructor.name][childElement.elementName], childElement.elementRoot)
-    } else {
-      this.elementRoot[this.constructor.name][childElement.elementName] = childElement.elementRoot
-    } 
-  }
-
+  
   public build() : string {
-    const doc = create(this.elementRoot)
+    let obj: any = {}
+    obj[this.elementName] = this.elementRoot
+    const doc = create(obj)
     const xacml = doc.end({ prettyPrint: true });
     return xacml
+  }
+}
+
+export namespace XACMLTopLevelElement{
+  export interface Options extends XACMLElement.Options{
+    description?: Description
   }
 }

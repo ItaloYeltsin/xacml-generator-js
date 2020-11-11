@@ -6,5 +6,7 @@
 import { XACMLElement } from "./XACMLElement";
 
 export class PolicyIssuer extends XACMLElement {
-  
+  constructor() {
+      super({})
+  }
 }
