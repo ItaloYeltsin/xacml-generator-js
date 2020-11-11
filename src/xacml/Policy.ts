@@ -6,7 +6,8 @@
 import { XACMLTopLevelElement } from "./XACMLTopLevelElement";
 
 export class Policy extends XACMLTopLevelElement {
-  constructor(description: string){
-    super(description)
-  }
+  // TODO: fix constructor
+  // constructor(description: string){
+  //   super(description)
+  // }
 }
